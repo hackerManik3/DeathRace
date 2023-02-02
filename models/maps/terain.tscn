@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdi5wttxqhf1k"]
+
+[ext_resource type="Shader" uid="uid://fplk1vu717mb" path="res://textures/road.tres" id="1_bymj6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_38bw0"]
+render_priority = 0
+shader = ExtResource("1_bymj6")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uflib"]
+size = Vector2(100, 100)
+subdivide_width = 150
+subdivide_depth = 150
+
+[node name="Terain" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.478204, 0)
+material_override = SubResource("ShaderMaterial_38bw0")
+mesh = SubResource("PlaneMesh_uflib")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7746, 4.89414, 7.58319)
+light_energy = 10.0
+omni_range = 21.8564
